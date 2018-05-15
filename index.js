@@ -1,3 +1,4 @@
+//day 1
 const button = document.querySelector('button.heading')
 const hdr = document.querySelector('h1.heading')
 const hdr2 = document.querySelector('h2.heading2')
@@ -8,11 +9,22 @@ const changeText = function(ev) {
     hdr2.textContent = 'New second heading' 
 }
 
-button.addEventListener('click', changeText)
+//button.addEventListener('click', changeText)
 
 function changeMainHeader(ev) {
     hdr.textContent = document.getElementById('newHeading').value
     //console.log('works')
 }
-
 //hdr.addEventListener('keyup', changeMainHeader)
+
+
+//day 2
+const form = document.querySelector('#userForm')
+const handleSubmit = function(ev) {
+    ev.preventDefault()
+    const heading = document.querySelector('h1')
+    const f = ev.target
+    const userName = f.userName.value
+    heading.textContent = userName
+}
+form.addEventListener('submit', handleSubmit)
