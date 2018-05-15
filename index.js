@@ -27,14 +27,16 @@ const handleSubmit = function(ev) {
     const f = ev.target
     const userName = f.userName.value
     const age = f.age.value
+    const favoriteColor = f.favoriteColor.value
+
     //users.innerHTML += '<p>' + userName  + ', ' + age + '</p>'
     //users.innerHTML += `<p>${userName}, ${age}</p>`
 
     const p = document.createElement('p')
     p.textContent = `${userName}, ${age}`
+    p.style.backgroundColor = favoriteColor
 
     users.appendChild(p)
-
 
     //f.userName.value = ''
     f.reset()
