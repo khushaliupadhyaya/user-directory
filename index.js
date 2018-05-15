@@ -20,13 +20,21 @@ function changeMainHeader(ev) {
 
 //day 2
 const form = document.querySelector('#userForm')
+const userName = form.userName.value
+const age = form.age.value
+const favoriteColor = form.favoriteColor.value
+
+const renderColor = function() {
+    const colorDiv = document.createElement('div')
+    colorDiv.style.backgroundColor = favoriteColor
+    colorDiv.style.width = '6rem'
+    colorDiv.style.height = '3rem'
+    return colorDiv
+}
+
 
 const handleSubmit = function(ev) {
     ev.preventDefault()
-    const f = ev.target
-    const userName = f.userName.value
-    const age = f.age.value
-    const favoriteColor = f.favoriteColor.value
 
     //users.innerHTML += '<p>' + userName  + ', ' + age + '</p>'
     //users.innerHTML += `<p>${userName}, ${age}</p>`
@@ -39,11 +47,7 @@ const handleSubmit = function(ev) {
 
     const colorItem = document.createElement('li')
     colorItem.textContent = `Favorite Color: `
-    const colorDiv = document.createElement('div')
-    colorDiv.style.backgroundColor = favoriteColor
-    colorDiv.style.width = '6rem'
-    colorDiv.style.height = '3rem'
-    colorItem.appendChild(colorDiv)
+    colorItem.appendChild(renderColor())
 
     const list = document.createElement('ul')
     list.appendChild(nameItem)
@@ -57,7 +61,7 @@ const handleSubmit = function(ev) {
     users.appendChild(list)
 
     //f.userName.value = ''
-    f.reset()
-    f.userName.focus()
+    form.reset()
+    form.userName.focus()
 }
 form.addEventListener('submit', handleSubmit)
