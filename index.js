@@ -20,6 +20,7 @@ function changeMainHeader(ev) {
 
 //day 2
 const form = document.querySelector('#userForm')
+
 const handleSubmit = function(ev) {
     ev.preventDefault()
     const users = document.querySelector('#users')
@@ -32,5 +33,6 @@ const handleSubmit = function(ev) {
 
     //f.userName.value = ''
     f.reset()
+    f.userName.focus()
 }
 form.addEventListener('submit', handleSubmit)
