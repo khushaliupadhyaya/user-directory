@@ -25,7 +25,7 @@ const handleSubmit = function(ev) {
     const users = document.querySelector('#users')
     const f = ev.target
     const userName = f.userName.value
-    users.textContent += ' ' + userName
+    users.innerHTML += '<p>' + userName + '</p>'
     f.userName.value = ''
 }
 form.addEventListener('submit', handleSubmit)
