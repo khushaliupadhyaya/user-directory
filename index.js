@@ -9,3 +9,10 @@ function changeText(ev) {
 }
 
 button.addEventListener('click', changeText)
+
+function changeMainHeader(ev) {
+    hdr.textContent = document.getElementById('newHeading').value
+    //console.log('works')
+}
+
+//hdr.addEventListener('keyup', changeMainHeader)
