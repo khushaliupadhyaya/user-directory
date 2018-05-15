@@ -32,13 +32,7 @@ const renderColor = function() {
     return colorDiv
 }
 
-
-const handleSubmit = function(ev) {
-    ev.preventDefault()
-
-    //users.innerHTML += '<p>' + userName  + ', ' + age + '</p>'
-    //users.innerHTML += `<p>${userName}, ${age}</p>`
-
+const renderListItem = function() {
     const nameItem = document.createElement('li')
     nameItem.textContent = `Name: ${userName}`
 
@@ -53,12 +47,35 @@ const handleSubmit = function(ev) {
     list.appendChild(nameItem)
     list.appendChild(ageItem)
     list.appendChild(colorItem)
+    return list
+}
+
+const handleSubmit = function(ev) {
+    ev.preventDefault()
+
+    //users.innerHTML += '<p>' + userName  + ', ' + age + '</p>'
+    //users.innerHTML += `<p>${userName}, ${age}</p>`
+
+    // const nameItem = document.createElement('li')
+    // nameItem.textContent = `Name: ${userName}`
+
+    // const ageItem = document.createElement('li')
+    // ageItem.textContent = `Age: ${age}`
+
+    // const colorItem = document.createElement('li')
+    // colorItem.textContent = `Favorite Color: `
+    // colorItem.appendChild(renderColor())
+
+    // const list = document.createElement('ul')
+    // list.appendChild(nameItem)
+    // list.appendChild(ageItem)
+    // list.appendChild(colorItem)
 
     // list.textContent = `${userName}, ${age}`
     // list.style.backgroundColor = favoriteColor
 
     const users = document.querySelector('#users')
-    users.appendChild(list)
+    users.appendChild(renderListItem())
 
     //f.userName.value = ''
     form.reset()
