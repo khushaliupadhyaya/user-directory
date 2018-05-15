@@ -28,7 +28,7 @@ const handleSubmit = function(ev) {
     const userName = f.userName.value
     const age = f.age.value
     //users.innerHTML += '<p>' + userName  + ', ' + age + '</p>'
-    users.innerHTML += '<p>' + userName  + ', ' + age + '</p>'
+    users.innerHTML += '<p>${userName}, ${age}</p>'
 
 
     //f.userName.value = ''
