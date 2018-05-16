@@ -57,7 +57,7 @@ const handleSubmit = function(ev) {
     const user = {
         userName: f.userName.value,
         age: f.age.value,
-        favoriteColor: renderColor(favoriteColor),
+        favoriteColor: renderColor(f.favoriteColor.value),
     }
 
 
@@ -72,9 +72,15 @@ const handleSubmit = function(ev) {
     // list.style.backgroundColor = favoriteColor
 
     const list = document.createElement('ul')
-    list.appendChild(renderListItem('Name', userName))
-    list.appendChild(renderListItem('Age', age))
-    list.appendChild(renderListItem('Favorite Color', renderColor(favoriteColor)))
+
+    const labels = Object.keys(user)
+    labels.forEach(function(label) {
+        const item = renderListItem(label, user[label])
+        list.appendChild(item)
+    })
+    // list.appendChild(renderListItem('Name', userName))
+    // list.appendChild(renderListItem('Age', age))
+    // list.appendChild(renderListItem('Favorite Color', renderColor(favoriteColor)))
 
     //renderList()
 
