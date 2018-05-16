@@ -25,9 +25,10 @@ let age = form.age.value
 let favoriteColor = form.favoriteColor.value
 let users = document.querySelector('#users')
 
-const renderColor = function() {
+const renderColor = function(color) {
     const colorDiv = document.createElement('div')
-    colorDiv.style.backgroundColor = favoriteColor
+    //colorDiv.style.backgroundColor = favoriteColor
+    colorDiv.style.backgroundColor = color
     colorDiv.style.width = '6rem'
     colorDiv.style.height = '3rem'
     return colorDiv
@@ -42,7 +43,7 @@ const renderListItem = function(list) {
 
     const colorItem = document.createElement('li')
     colorItem.textContent = `Favorite Color: `
-    colorItem.appendChild(renderColor())
+    colorItem.appendChild(renderColor(favoriteColor))
 
     list.appendChild(nameItem)
     list.appendChild(ageItem)
