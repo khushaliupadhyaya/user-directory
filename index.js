@@ -46,9 +46,14 @@ const renderListItem = function(label, value) {
     return item
 }
 
-const renderList = function() {
-    // const list = document.createElement('ul')
-    // renderListItem(list)
+function renderList(data) {
+    const list = document.createElement('ul')
+    const labels = Object.keys(data)
+    labels.forEach(function(label) {
+        const item = renderListItem(label, data[label])
+        list.appendChild(item)
+    })
+    return list
 }
 
 const handleSubmit = function(ev) {
@@ -71,20 +76,14 @@ const handleSubmit = function(ev) {
     // list.textContent = `${userName}, ${age}`
     // list.style.backgroundColor = favoriteColor
 
-    const list = document.createElement('ul')
-
-    const labels = Object.keys(user)
-    labels.forEach(function(label) {
-        const item = renderListItem(label, user[label])
-        list.appendChild(item)
-    })
+    
     // list.appendChild(renderListItem('Name', userName))
     // list.appendChild(renderListItem('Age', age))
     // list.appendChild(renderListItem('Favorite Color', renderColor(favoriteColor)))
 
     //renderList()
 
-    users.appendChild(list)
+    users.appendChild(renderList(user))
 
     //f.userName.value = ''
     form.reset()
