@@ -18,7 +18,7 @@ function changeMainHeader(ev) {
 //hdr.addEventListener('keyup', changeMainHeader)
 
 
-//day 2
+//day 2 and day 3
 const form = document.querySelector('#userForm')
 // let userName = form.userName.value
 // let age = form.age.value
@@ -49,7 +49,8 @@ const renderListItem = function(label, value) {
 function renderList(data) {
     const list = document.createElement('ul')
     const labels = Object.keys(data)
-    labels.forEach(function(label) {
+    //for each label, do this (arrow function)
+    labels.forEach(label => {
         const item = renderListItem(label, data[label])
         list.appendChild(item)
     })
@@ -65,7 +66,6 @@ const handleSubmit = function(ev) {
         favoriteColor: renderColor(f.favoriteColor.value),
     }
 
-
     const userName = f.userName.value
     const age = f.age.value
     const favoriteColor = f.favoriteColor.value
@@ -76,16 +76,8 @@ const handleSubmit = function(ev) {
     // list.textContent = `${userName}, ${age}`
     // list.style.backgroundColor = favoriteColor
 
-    
-    // list.appendChild(renderListItem('Name', userName))
-    // list.appendChild(renderListItem('Age', age))
-    // list.appendChild(renderListItem('Favorite Color', renderColor(favoriteColor)))
-
-    //renderList()
-
     users.appendChild(renderList(user))
 
-    //f.userName.value = ''
     form.reset()
     form.userName.focus()
 }
